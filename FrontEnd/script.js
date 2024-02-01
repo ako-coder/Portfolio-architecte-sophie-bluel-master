@@ -29,18 +29,30 @@ getWorks();
 let worksStorageString = localStorage.getItem("works");
 let works = JSON.parse(worksStorageString);
 
-
-for (const photo of works) {
-    console.log(photo);
-    integrerWorks(photo);
+function afficherWorks() {
+    for (const photo of works) {
+        console.log(photo);
+        integrerWorks(photo);
+    };    
 };
 
 
-const boutonTous = document.querySelector(".btn-all");
+const boutonTous = document.querySelector(".btn-tous");
 const boutonObjets = document.querySelector(".btn-objets");
 const boutonApp = document.querySelector(".btn-app");
 const boutonHotels = document.querySelector(".btn-hotels");
 
-boutonTous.addEventListener(click, () => {
+boutonTous.addEventListener("click", () => {
+    cleanWorks();
+    afficherWorks();
+});
+
+function cleanWorks() {
+    const gallery = document.querySelector(".gallery");
+    gallery.innerHTML = "";
+};
+
+boutonObjets.addEventListener("click", () => {
+    cleanWorks();
     
 });
