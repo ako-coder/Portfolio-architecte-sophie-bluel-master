@@ -36,6 +36,7 @@ function afficherWorks() {
     };    
 };
 
+afficherWorks()
 
 const boutonTous = document.querySelector(".btn-tous");
 const boutonObjets = document.querySelector(".btn-objets");
@@ -54,5 +55,51 @@ function cleanWorks() {
 
 boutonObjets.addEventListener("click", () => {
     cleanWorks();
-    
+    afficherWorksFiltered(1);
 });
+
+function afficherWorksFiltered(category) {
+    for (const photo of works) {
+        if (photo.categoryId === category) {
+            console.log(photo);
+            integrerWorks(photo);
+        }
+    };    
+};
+
+boutonApp.addEventListener("click", () => {
+    cleanWorks();
+    afficherWorksFiltered(2);
+});
+
+boutonHotels.addEventListener("click", () => {
+    cleanWorks();
+    afficherWorksFiltered(3);
+});
+
+
+function getCategories() {
+    fetch('http://localhost:5678/api/categories')
+        .then(response => response.json())
+        .then(categories => {
+            if (Array.isArray(categories)) {
+                localStorage.setItem("categories", JSON.stringify(categories));
+            } else {
+                console.error('La réponse JSON n\'est pas un tableau.');
+            }
+        })
+        .catch(error => console.error('Erreur lors de la requête fetch :', error));
+};
+
+getCategories();
+
+let categoriesStorageString = localStorage.getItem("categories");
+let categories = JSON.parse(worksStorageString);
+
+function integrerBoutons(article) {
+    const divButtons = document.querySelector(".buttons");
+    const button = document.createElement("button");      
+    button.innerText = article.name;
+
+    divButtons.appendChild(button);   
+};
