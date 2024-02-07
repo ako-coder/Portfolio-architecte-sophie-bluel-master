@@ -36,7 +36,7 @@ function afficherWorks() {
     };    
 };
 
-afficherWorks()
+afficherWorks();
 
 const boutonTous = document.querySelector(".btn-tous");
 const boutonObjets = document.querySelector(".btn-objets");
@@ -100,6 +100,9 @@ function integrerBoutons(article) {
     const divButtons = document.querySelector(".buttons");
     const button = document.createElement("button");      
     button.innerText = article.name;
+    button.classList.add(`cat${article.id}`);
 
     divButtons.appendChild(button);   
 };
+
+// integrerBoutons(categories);
