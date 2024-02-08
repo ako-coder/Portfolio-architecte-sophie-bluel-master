@@ -94,15 +94,17 @@ function getCategories() {
 getCategories();
 
 let categoriesStorageString = localStorage.getItem("categories");
-let categories = JSON.parse(worksStorageString);
+let categories = JSON.parse(categoriesStorageString);
 
 function integrerBoutons(article) {
     const divButtons = document.querySelector(".buttons");
     const button = document.createElement("button");      
     button.innerText = article.name;
-    button.classList.add(`btn${article.id}`);
+    button.classList.add("btn-");
 
     divButtons.appendChild(button);   
 };
 
 // integrerBoutons(categories);
+
+// let categorieCourante = 
