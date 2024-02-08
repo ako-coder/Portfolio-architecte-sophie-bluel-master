@@ -38,25 +38,35 @@ function afficherWorks() {
 
 afficherWorks();
 
-const boutonTous = document.querySelector(".btn-tous");
-const boutonObjets = document.querySelector(".btn-objets");
-const boutonApp = document.querySelector(".btn-app");
-const boutonHotels = document.querySelector(".btn-hotels");
+const bouton0 = document.querySelector(".btn0");
+const bouton1 = document.querySelector(".btn1");
+const bouton2 = document.querySelector(".btn2");
+const bouton3 = document.querySelector(".btn3");
 
-boutonTous.addEventListener("click", () => {
+bouton0.addEventListener("click", () => {
     cleanWorks();
     afficherWorks();
+});
+
+bouton1.addEventListener("click", () => {
+    cleanWorks();
+    afficherWorksFiltered(1);
+});
+
+bouton2.addEventListener("click", () => {
+    cleanWorks();
+    afficherWorksFiltered(2);
+});
+
+bouton3.addEventListener("click", () => {
+    cleanWorks();
+    afficherWorksFiltered(3);
 });
 
 function cleanWorks() {
     const gallery = document.querySelector(".gallery");
     gallery.innerHTML = "";
 };
-
-boutonObjets.addEventListener("click", () => {
-    cleanWorks();
-    afficherWorksFiltered(1);
-});
 
 function afficherWorksFiltered(category) {
     for (const photo of works) {
@@ -67,23 +77,13 @@ function afficherWorksFiltered(category) {
     };    
 };
 
-boutonApp.addEventListener("click", () => {
-    cleanWorks();
-    afficherWorksFiltered(2);
-});
-
-boutonHotels.addEventListener("click", () => {
-    cleanWorks();
-    afficherWorksFiltered(3);
-});
-
 
 function getCategories() {
     fetch('http://localhost:5678/api/categories')
         .then(response => response.json())
         .then(categories => {
             if (Array.isArray(categories)) {
-                localStorage.setItem("categories", JSON.stringify(categories));
+                localStorage.setItem("categories", JSON.stringify(categories));                
             } else {
                 console.error('La réponse JSON n\'est pas un tableau.');
             }
@@ -100,7 +100,7 @@ function integrerBoutons(article) {
     const divButtons = document.querySelector(".buttons");
     const button = document.createElement("button");      
     button.innerText = article.name;
-    button.classList.add(`cat${article.id}`);
+    button.classList.add(`btn${article.id}`);
 
     divButtons.appendChild(button);   
 };
