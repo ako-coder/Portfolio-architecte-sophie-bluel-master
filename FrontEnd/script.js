@@ -38,35 +38,35 @@ function afficherWorks() {
 
 afficherWorks();
 
-const bouton0 = document.querySelector(".btn0");
-const bouton1 = document.querySelector(".btn1");
-const bouton2 = document.querySelector(".btn2");
-const bouton3 = document.querySelector(".btn3");
+// const bouton0 = document.querySelector(".btn0");
+// const bouton1 = document.querySelector(".btn1");
+// const bouton2 = document.querySelector(".btn2");
+// const bouton3 = document.querySelector(".btn3");
 
-bouton0.addEventListener("click", () => {
-    cleanWorks();
-    afficherWorks();
-});
+// bouton0.addEventListener("click", () => {
+//     cleanWorks();
+//     afficherWorks();
+// });
 
-bouton1.addEventListener("click", () => {
-    cleanWorks();
-    afficherWorksFiltered(1);
-});
+// bouton1.addEventListener("click", () => {
+//     cleanWorks();
+//     afficherWorksFiltered(1);
+// });
 
-bouton2.addEventListener("click", () => {
-    cleanWorks();
-    afficherWorksFiltered(2);
-});
+// bouton2.addEventListener("click", () => {
+//     cleanWorks();
+//     afficherWorksFiltered(2);
+// });
 
-bouton3.addEventListener("click", () => {
-    cleanWorks();
-    afficherWorksFiltered(3);
-});
+// bouton3.addEventListener("click", () => {
+//     cleanWorks();
+//     afficherWorksFiltered(3);
+// });
 
-function cleanWorks() {
-    const gallery = document.querySelector(".gallery");
-    gallery.innerHTML = "";
-};
+// function cleanWorks() {
+//     const gallery = document.querySelector(".gallery");
+//     gallery.innerHTML = "";
+// };
 
 function afficherWorksFiltered(category) {
     for (const photo of works) {
@@ -100,11 +100,17 @@ function integrerBoutons(article) {
     const divButtons = document.querySelector(".buttons");
     const button = document.createElement("button");      
     button.innerText = article.name;
-    button.classList.add("btn-");
-
+    button.setAttribute("id", article.id);
+    
     divButtons.appendChild(button);   
 };
 
-// integrerBoutons(categories);
+for (i=0; i<3; i++) {
+    integrerBoutons(categories[i]);
+    addEventListener("click", ()=>{
+        cleanWorks();
+        afficherWorksFiltered();
+    });
+}
 
-// let categorieCourante = 
+console.log(categories);
