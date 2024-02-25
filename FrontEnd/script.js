@@ -38,36 +38,6 @@ function afficherWorks() {
 
 afficherWorks();
 
-// const bouton0 = document.querySelector(".btn0");
-// const bouton1 = document.querySelector(".btn1");
-// const bouton2 = document.querySelector(".btn2");
-// const bouton3 = document.querySelector(".btn3");
-
-// bouton0.addEventListener("click", () => {
-//     cleanWorks();
-//     afficherWorks();
-// });
-
-// bouton1.addEventListener("click", () => {
-//     cleanWorks();
-//     afficherWorksFiltered(1);
-// });
-
-// bouton2.addEventListener("click", () => {
-//     cleanWorks();
-//     afficherWorksFiltered(2);
-// });
-
-// bouton3.addEventListener("click", () => {
-//     cleanWorks();
-//     afficherWorksFiltered(3);
-// });
-
-// function cleanWorks() {
-//     const gallery = document.querySelector(".gallery");
-//     gallery.innerHTML = "";
-// };
-
 function afficherWorksFiltered(category) {
     for (const photo of works) {
         if (photo.categoryId === category) {
