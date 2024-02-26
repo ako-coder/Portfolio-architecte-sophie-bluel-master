@@ -33,7 +33,7 @@ function afficherWorks() {
     for (const photo of works) {
         console.log(photo);
         integrerWorks(photo);
-    };    
+    };
 };
 
 afficherWorks();
@@ -44,16 +44,15 @@ function afficherWorksFiltered(category) {
             console.log(photo);
             integrerWorks(photo);
         }
-    };    
+    };
 };
-
 
 function getCategories() {
     fetch('http://localhost:5678/api/categories')
         .then(response => response.json())
         .then(categories => {
             if (Array.isArray(categories)) {
-                localStorage.setItem("categories", JSON.stringify(categories));                
+                localStorage.setItem("categories", JSON.stringify(categories));
             } else {
                 console.error('La réponse JSON n\'est pas un tableau.');
             }
@@ -69,24 +68,27 @@ console.log(categories);
 
 function integrerBoutons(article) {
     const divButtons = document.querySelector(".buttons");
-    const button = document.createElement("button");      
+    const button = document.createElement("button");
     button.innerText = article.name;
     button.setAttribute("id", article.id);
-    
-    divButtons.appendChild(button);   
+
+    divButtons.appendChild(button);
 };
 
-// for (i=0; i<3; i++) {
-//     integrerBoutons(categories[i]);
-//     addEventListener("click", ()=>{
-//         afficherWorksFiltered(i);
-//     });
-// }
+function cleanWorks() {
+    const gallery = document.querySelector(".gallery");
+    gallery.innerHTML = "";
+}
 
-for (let i = 0; i < 3; i++) {
+document.getElementById("boutton_tous").addEventListener("click", () => {
+    cleanWorks();
+    afficherWorks();
+})
+
+for (i = 0; i < 3; i++) {
     integrerBoutons(categories[i]);
-    document.getElementById(categories[i].id).addEventListener("click", (event) => {
-        const categoryId = event.target.id;
-        afficherWorksFiltered(categoryId);
+    addEventListener("click", () => {
+        cleanWorks();
+        afficherWorksFiltered();
     });
 }
