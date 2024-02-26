@@ -65,6 +65,7 @@ getCategories();
 
 let categoriesStorageString = localStorage.getItem("categories");
 let categories = JSON.parse(categoriesStorageString);
+console.log(categories);
 
 function integrerBoutons(article) {
     const divButtons = document.querySelector(".buttons");
@@ -75,12 +76,17 @@ function integrerBoutons(article) {
     divButtons.appendChild(button);   
 };
 
-for (i=0; i<3; i++) {
+// for (i=0; i<3; i++) {
+//     integrerBoutons(categories[i]);
+//     addEventListener("click", ()=>{
+//         afficherWorksFiltered(i);
+//     });
+// }
+
+for (let i = 0; i < 3; i++) {
     integrerBoutons(categories[i]);
-    addEventListener("click", ()=>{
-        cleanWorks();
-        afficherWorksFiltered();
+    document.getElementById(categories[i].id).addEventListener("click", (event) => {
+        const categoryId = event.target.id;
+        afficherWorksFiltered(categoryId);
     });
 }
-
-console.log(categories);
