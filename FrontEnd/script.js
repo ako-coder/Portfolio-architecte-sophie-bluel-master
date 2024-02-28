@@ -87,8 +87,8 @@ document.getElementById("boutton_tous").addEventListener("click", () => {
 
 for (i = 0; i < 3; i++) {
     integrerBoutons(categories[i]);
-    addEventListener("click", () => {
-        cleanWorks();
-        afficherWorksFiltered();
-    });
+    // addEventListener("click", () => {
+    //     cleanWorks();
+    //     afficherWorksFiltered();
+    // });
 }

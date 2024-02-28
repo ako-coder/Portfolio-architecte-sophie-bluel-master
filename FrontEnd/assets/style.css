@@ -126,6 +126,8 @@ li:hover {
 	margin-bottom: 1em;
 }
 
+/* buttons */
+
 .buttons {
 	display: flex;
 	justify-content: center;
@@ -145,9 +147,13 @@ button {
 }
 
 button:hover {
-	color: white;
-	background-color: #1D6154;
 	cursor: pointer;
+	box-shadow: 0 0 5px #1D6154;
+}
+
+.filter_clicked {
+	color: white;
+	background-color: #1D6154;	
 }
 
 .gallery {
