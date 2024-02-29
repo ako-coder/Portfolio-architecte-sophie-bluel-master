@@ -39,9 +39,9 @@ function afficherWorks() {
 afficherWorks();
 
 function afficherWorksFiltered(category) {
+    console.log(category);
     for (const photo of works) {
-        if (photo.categoryId === category) {
-            console.log(photo);
+        if (photo.categoryId === category.id) {            
             integrerWorks(photo);
         }
     };
@@ -71,6 +71,10 @@ function integrerBoutons(article) {
     const button = document.createElement("button");
     button.innerText = article.name;
     button.setAttribute("id", article.id);
+    button.addEventListener("click", ()=> {
+        cleanWorks();
+        afficherWorksFiltered(article);
+    })
 
     divButtons.appendChild(button);
 };
@@ -86,9 +90,5 @@ document.getElementById("boutton_tous").addEventListener("click", () => {
 })
 
 for (i = 0; i < 3; i++) {
-    integrerBoutons(categories[i]);
-    // addEventListener("click", () => {
-    //     cleanWorks();
-    //     afficherWorksFiltered();
-    // });
+    integrerBoutons(categories[i]);    
 }
