@@ -52,6 +52,7 @@ function getCategories() {
         .then(response => response.json())
         .then(categories => {
             if (Array.isArray(categories)) {
+                // const setCategories = new Set(categories);
                 localStorage.setItem("categories", JSON.stringify(categories));
             } else {
                 console.error('La réponse JSON n\'est pas un tableau.');
@@ -74,6 +75,9 @@ function integrerBoutons(article) {
     button.addEventListener("click", ()=> {
         cleanWorks();
         afficherWorksFiltered(article);
+        cleanButtons();  
+        document.getElementById("boutton_tous").classList.remove("filter_clicked");   
+        button.classList.add("filter_clicked");
     })
 
     divButtons.appendChild(button);
@@ -84,9 +88,19 @@ function cleanWorks() {
     gallery.innerHTML = "";
 }
 
-document.getElementById("boutton_tous").addEventListener("click", () => {
+function cleanButtons() {
+    let buttons = document.querySelectorAll(".buttons button");
+    buttons.forEach(function(button){
+        button.classList.remove("filter_clicked"); 
+    }) 
+}
+
+const buttonTous = document.getElementById("boutton_tous");
+buttonTous.addEventListener("click", () => {
     cleanWorks();
     afficherWorks();
+    cleanButtons();
+    buttonTous.classList.add("filter_clicked");
 })
 
 for (i = 0; i < 3; i++) {
