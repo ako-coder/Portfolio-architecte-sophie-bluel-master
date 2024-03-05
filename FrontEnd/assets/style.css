@@ -253,6 +253,7 @@ footer nav ul {
 
 #login_form p {
 	color: red;
+	margin-top: 20px;
 	text-align: center;
 	text-decoration: none;
 }

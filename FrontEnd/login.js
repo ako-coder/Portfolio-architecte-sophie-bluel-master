@@ -17,11 +17,11 @@ function login(username, password) {
             if (response.status === 200) {
                 reponseServeur.then(data => {
                     console.log(data);
-                    localStorage.setItem("token", JSON.stringify(data.token));
+                    localStorage.setItem("token", JSON.stringify(data.token));                
                 })
             } else {                
                let messageErreur = document.getElementById("error_message");
-               messageErreur.innerText = "Nom utilisateur ou mot de passe eronné";                   
+               messageErreur.innerText = "Nom utilisateur ou mot de passe eronné.";                   
             }
         })
         
