@@ -11,17 +11,24 @@ function login(username, password) {
             password: password
         })
     })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            localStorage.setItem("token", JSON.stringify(data.token));
+        .then(response => {
+            let reponseServeur = response.json()
+            console.log(response.status)
+            if (response.status === 200) {
+                then(data => {
+                    console.log(data);
+                    localStorage.setItem("token", JSON.stringify(data.token));
+                })
+            } else {                
+               let messageErreur = document.getElementById("error_message");
+               messageErreur.innerText = "Nom utilisateur ou mot de passe eronné";                   
+            }
         })
-        .catch(error => {
-            const errorMessage = document.getElementById("error_message");           
-            errorMessage.innerText = error.message;
-            console.error('Erreur lors de la requête fetch :', error)
-        });
+        
+        
 };
+
+let token = localStorage.getItem("token");
 
 document.getElementById("login_form").addEventListener("submit", function (event) {
     event.preventDefault();

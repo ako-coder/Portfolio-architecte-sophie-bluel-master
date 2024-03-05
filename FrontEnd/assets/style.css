@@ -250,3 +250,9 @@ footer nav ul {
 #login p {
 	text-decoration: underline;
 }
+
+#login_form p {
+	color: red;
+	text-align: center;
+	text-decoration: none;
+}
