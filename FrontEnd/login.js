@@ -15,7 +15,7 @@ function login(username, password) {
             let reponseServeur = response.json()
             console.log(response.status)
             if (response.status === 200) {
-                then(data => {
+                reponseServeur.then(data => {
                     console.log(data);
                     localStorage.setItem("token", JSON.stringify(data.token));
                 })
