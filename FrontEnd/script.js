@@ -30,8 +30,7 @@ let worksStorageString = localStorage.getItem("works");
 let works = JSON.parse(worksStorageString);
 
 function afficherWorks() {
-    for (const photo of works) {
-        console.log(photo);
+    for (const photo of works) {        
         integrerWorks(photo);
     };
 };
@@ -39,7 +38,6 @@ function afficherWorks() {
 afficherWorks();
 
 function afficherWorksFiltered(category) {
-    console.log(category);
     for (const photo of works) {
         if (photo.categoryId === category.id) {            
             integrerWorks(photo);
@@ -52,7 +50,6 @@ function getCategories() {
         .then(response => response.json())
         .then(categories => {
             if (Array.isArray(categories)) {
-                // const setCategories = new Set(categories);
                 localStorage.setItem("categories", JSON.stringify(categories));
             } else {
                 console.error('La réponse JSON n\'est pas un tableau.');
@@ -65,7 +62,6 @@ getCategories();
 
 let categoriesStorageString = localStorage.getItem("categories");
 let categories = JSON.parse(categoriesStorageString);
-console.log(categories);
 
 function integrerBoutons(article) {
     const divButtons = document.querySelector(".buttons");
@@ -108,7 +104,7 @@ for (i = 0; i < 3; i++) {
 }
 
 
-// 
+// mode edition
 
 document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem('token') !== null){
@@ -118,4 +114,9 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("menu_login").style.display = "none";
         document.getElementById("menu_logout").style.display = "block";
     }
+})
+
+const boutonLogout = document.getElementById("menu_logout");
+boutonLogout.addEventListener('click', () => {
+    localStorage.removeItem('token');
 })

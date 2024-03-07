@@ -47,19 +47,20 @@ table {
 	border-spacing: 0;
 }
 /** end reset css**/
+
 body {
 	max-width: 1140px;
-	margin:auto;
+	margin: auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px 0;
 }
 section {
-	margin: 50px 0
+	margin: 50px 0;
 }
 
 h1{
@@ -98,6 +99,16 @@ nav li {
 li:hover {
 	color: #B1663C;
 }
+
+nav a {
+	text-decoration: none;
+	color: black;
+}
+
+nav a:hover {
+	color: #B1663C;
+}
+
 #introduction {
 	display: flex;
 	align-items: center;	
@@ -238,12 +249,21 @@ footer nav ul {
 	flex-direction: column;
 }
 
+.text-bold {
+	font-weight: bold;
+}
+
 #login input {
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
+
+#btn_envoyer:hover {
+	cursor: pointer;
+}
+
 #login label {
 	margin: 2em 0 1em 0;
 }
@@ -262,18 +282,20 @@ footer nav ul {
 /* mode edition */
 
 .mode-edition {
+	font-size: 1.2em;
 	background-color: black;
 	height: 59px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	width: 100%;
 }
 
 .mode-edition p {
 	color: #FFF;
 }
 
-/* modal */
+/* modale */
 
 #projets_modal1 {
 	display: flex;
@@ -296,6 +318,9 @@ footer nav ul {
 
 .modal h3 {
 	text-align: center;
+	font: 'Work Sans';
+	font-size: 26px;
+
 }
 
 .modal-wrapper {

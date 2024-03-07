@@ -21,7 +21,7 @@ function login(username, password) {
                 })
             } else {                
                let messageErreur = document.getElementById("error_message");
-               messageErreur.innerText = "Nom utilisateur ou mot de passe eronné.";                   
+               messageErreur.innerText = "Nom utilisateur ou mot de passe erroné.";                   
             }
         })
         

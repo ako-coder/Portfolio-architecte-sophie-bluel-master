@@ -18,10 +18,14 @@
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
-			<li>projets</li>
-			<li>contact</li>
-			<li id="menu_login">login</li>
-			<li id="menu_logout" style="display:none">logout</li>
+			<li><a href="#projets">projets</a></li>
+			<li><a href="#contact">contact</a></li>
+			<li id="menu_login">
+				<a href="http://127.0.0.1:5500/FrontEnd/login.html">login</a>
+			</li>
+			<li id="menu_logout" style="display:none">
+				<a href="http://127.0.0.1:5500/FrontEnd/index.html">logout</a>
+			</li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -43,13 +47,13 @@
 		<!-- Modale -->
 
 		<div id="projets_modal1">
-			<h2>Mes Projets</h2>			
+			<h2 id="projets">Mes Projets</h2>			
 			<img href="#modal1" id="modal_edition" class="js-modal" src="assets/icons/edit.png" style="display:none"/>			
 		</div>
 		<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal" style="display:none">
 			<div class="modal-wrapper js-modal-stop">
 				<button class="js-modal-close">x</button>
-				<h3 id="titlemodal">Gallerie photos</h3>
+				<h3 id="titlemodal">Galerie photo</h3>
 			</div>
 		</aside>
 

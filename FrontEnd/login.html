@@ -15,9 +15,14 @@
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
-			<li>projets</li>
-			<li>contact</li>
-			<li>login</li>
+			<li><a href="#projets">projets</a></li>
+			<li><a href="#contact">contact</a></li>
+			<li id="menu_login" class="text-bold">
+				<a href="http://127.0.0.1:5500/FrontEnd/login.html">login</a>
+			</li>
+			<li id="menu_logout" style="display:none">
+				<a href="http://127.0.0.1:5500/FrontEnd/index.html">logout</a>
+			</li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -31,7 +36,7 @@
             <label for="name">Mot de passe</label>
 			<input type="password" name="password" id="password">
 			<p id="error_message"></p>		
-			<input type="submit" value="Envoyer">
+			<input id="btn_envoyer" type="submit" value="Envoyer">
 		</form>
         <p>Mot de passe oublié</p>
 	</section>
