@@ -13,11 +13,11 @@ function login(username, password) {
     })
         .then(response => {
             let reponseServeur = response.json()
-            console.log(response.status)
             if (response.status === 200) {
                 reponseServeur.then(data => {
                     console.log(data);
-                    localStorage.setItem("token", JSON.stringify(data.token));                
+                    localStorage.setItem("token", JSON.stringify(data.token));
+                    window.location.href="http://127.0.0.1:5500/FrontEnd/index.html";                
                 })
             } else {                
                let messageErreur = document.getElementById("error_message");

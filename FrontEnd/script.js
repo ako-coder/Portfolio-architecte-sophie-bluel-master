@@ -106,3 +106,14 @@ buttonTous.addEventListener("click", () => {
 for (i = 0; i < 3; i++) {
     integrerBoutons(categories[i]);    
 }
+
+
+// 
+
+document.addEventListener("DOMContentLoaded", function() {
+    if (localStorage.getItem('token') !== null){
+        document.getElementById("buttons_categories").style.display = "none";
+        document.getElementById("m_edition").style.display = "flex";
+        document.getElementById("modal_edition").style.display = "block";
+    }
+})
