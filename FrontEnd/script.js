@@ -115,5 +115,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("buttons_categories").style.display = "none";
         document.getElementById("m_edition").style.display = "flex";
         document.getElementById("modal_edition").style.display = "block";
+        document.getElementById("menu_login").style.display = "none";
+        document.getElementById("menu_logout").style.display = "block";
     }
 })
