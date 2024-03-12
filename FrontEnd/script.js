@@ -155,15 +155,15 @@ function afficherMiniWorks() {
 afficherMiniWorks()
 
 function supprimerWorks(idImage) {
-    //TODO: fetch delete
+    // fetch delete
     fetch(`http://localhost:5678/api/works/${idImage}`, {
         method: "DELETE",
         headers: {
-            "Authorization" : `Bearer ${localStorage.getItem('token')}`
+            "Authorization" : `Bearer ${JSON.parse(localStorage.getItem('token'))}`
         }        
     })
     .then(response => {
-        if(response.status === 200) {
+        if(response.ok) {
             let localWorks = JSON.parse(localStorage.getItem("works"));
             localWorks = localWorks.filter(work => work.id !== idImage);
             localStorage.setItem("works", JSON.stringify(localWorks));
