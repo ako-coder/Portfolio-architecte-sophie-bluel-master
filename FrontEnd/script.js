@@ -156,15 +156,26 @@ afficherMiniWorks()
 
 function supprimerWorks(idImage) {
     //TODO: fetch delete
-    let localWorks = JSON.parse(localStorage.getItem("works"));
-    localWorks = localWorks.filter(work => work.id !== idImage);
-    localStorage.setItem("works", JSON.stringify(localWorks));
-    worksStorageString = localStorage.getItem("works");
-    works = JSON.parse(worksStorageString);
-    cleanWorks();
-    cleanMiniWorks();
-    afficherWorks();
-    afficherMiniWorks();
+    fetch(`http://localhost:5678/api/works/${idImage}`, {
+        method: "DELETE",
+        headers: {
+            "Authorization" : `Bearer ${localStorage.getItem('token')}`
+        }        
+    })
+    .then(response => {
+        if(response.status === 200) {
+            let localWorks = JSON.parse(localStorage.getItem("works"));
+            localWorks = localWorks.filter(work => work.id !== idImage);
+            localStorage.setItem("works", JSON.stringify(localWorks));
+            worksStorageString = localStorage.getItem("works");
+            works = JSON.parse(worksStorageString);
+            cleanWorks();
+            cleanMiniWorks();
+            afficherWorks();
+            afficherMiniWorks();
+        }
+    })
+    .catch(error => console.error("Erreur: ", error))    
 }
 
 function cleanMiniWorks() {
