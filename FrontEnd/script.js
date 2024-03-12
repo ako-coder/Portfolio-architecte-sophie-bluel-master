@@ -30,7 +30,7 @@ let worksStorageString = localStorage.getItem("works");
 let works = JSON.parse(worksStorageString);
 
 function afficherWorks() {
-    for (const photo of works) {        
+    for (const photo of works) {      
         integrerWorks(photo);
     };
 };
@@ -120,3 +120,54 @@ const boutonLogout = document.getElementById("menu_logout");
 boutonLogout.addEventListener('click', () => {
     localStorage.removeItem('token');
 })
+
+const boutonEdit = document.getElementById("modal_edition");
+boutonEdit.addEventListener('click', () => {
+
+})
+
+function integrerMiniWorks(article) {
+    const miniGallery = document.querySelector(".mini-gallery");
+    const miniFig = document.createElement("figure");
+    const miniPic = document.createElement("img");
+    const trashPic = document.createElement("img");
+    miniPic.src = article.imageUrl;
+    trashPic.src = "assets/icons/trash.png";
+    miniFig.classList.add("mini-fig");
+    miniPic.classList.add("mini-pic");
+    trashPic.classList.add("trash-pic");
+    trashPic.addEventListener("click", () => {
+        supprimerWorks(article.id);
+    });
+
+    miniGallery.appendChild(miniFig);
+    miniFig.appendChild(miniPic);
+    miniFig.appendChild(trashPic);
+
+};
+
+function afficherMiniWorks() {
+    for (const photo of works) {        
+        integrerMiniWorks(photo);
+    };
+};
+
+afficherMiniWorks()
+
+function supprimerWorks(idImage) {
+    //TODO: fetch delete
+    let localWorks = JSON.parse(localStorage.getItem("works"));
+    localWorks = localWorks.filter(work => work.id !== idImage);
+    localStorage.setItem("works", JSON.stringify(localWorks));
+    worksStorageString = localStorage.getItem("works");
+    works = JSON.parse(worksStorageString);
+    cleanWorks();
+    cleanMiniWorks();
+    afficherWorks();
+    afficherMiniWorks();
+}
+
+function cleanMiniWorks() {
+    const gallery = document.querySelector(".mini-gallery");
+    gallery.innerHTML = "";
+}

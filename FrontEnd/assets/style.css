@@ -48,7 +48,7 @@ table {
 }
 /** end reset css**/
 
-body {
+.body-margin {
 	max-width: 1140px;
 	margin: auto;
 	font-family: 'Work Sans' ;
@@ -304,6 +304,10 @@ footer nav ul {
 	gap: 20px;	
 }
 
+#modal_edition:hover {
+	cursor: pointer;
+}
+
 .modal {
 	position: fixed;
 	display: flex;
@@ -334,14 +338,43 @@ footer nav ul {
 
 .modal-button {
 	display: flex;
-	justify-content: center;
+	justify-content: center;	
 } 
 
 .modal-wrapper {
-	overflow: auto;
-	width: 600px;
-	max-width: clac(100vw - 20px);
-	max-height: clac(100vh - 20px);
-	padding: 20px;
+	/* overflow: auto; */
+	width: 565px;
+	height: 630px;
 	background-color: #FFF;
+	border-radius: 10px;
+	padding: 30px;
+}
+
+.mini-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin: 50px 55px 50px 70px;
+	padding-bottom: 35px;
+	border-bottom: solid 1px #B3B3B3;
+
+}
+
+.mini-pic {
+	width: 78.12px;
+	height: 104.08px;
+	margin-bottom: 15px;
+}
+
+.mini-fig {
+	position: relative;
+}
+
+.trash-pic {
+	position: absolute;
+	width: 17px;
+	height: 17px;
+	top: 0;
+	right: 0;
+	margin: 5px;
 }
