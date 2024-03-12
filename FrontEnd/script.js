@@ -135,8 +135,9 @@ function integrerMiniWorks(article) {
     trashPic.src = "assets/icons/trash.png";
     miniFig.classList.add("mini-fig");
     miniPic.classList.add("mini-pic");
-    trashPic.classList.add("trash-pic");
-    trashPic.addEventListener("click", () => {
+    trashPic.classList.add("trash-pic");   
+    trashPic.addEventListener("click", (event) => {
+        event.preventDefault();
         supprimerWorks(article.id);
     });
 
@@ -182,3 +183,20 @@ function cleanMiniWorks() {
     const gallery = document.querySelector(".mini-gallery");
     gallery.innerHTML = "";
 }
+
+const boutonAjouterPhoto = document.getElementById('bouton_ajouter_photo')
+boutonAjouterPhoto.addEventListener('click', () => {
+    const divGalleryPhoto = document.getElementById('galerie_photo')
+    divGalleryPhoto.style.display = 'none' 
+    const divAjoutPhoto = document.getElementById('ajout_photo')
+    divAjoutPhoto.style.display = 'block' 
+})
+
+//TODO: inverser
+// const boutonAjouterPhoto = document.getElementById('bouton_ajouter_photo')
+// boutonAjouterPhoto.addEventListener('click', () => {
+//     const divGalleryPhoto = document.getElementById('galerie_photo')
+//     divGalleryPhoto.style.display = 'none' 
+//     const divAjoutPhoto = document.getElementById('ajout_photo')
+//     divAjoutPhoto.style.display = 'block' 
+// })
