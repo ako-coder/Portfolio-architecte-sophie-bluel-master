@@ -322,7 +322,7 @@ footer nav ul {
 
 .modal-xmark {
 	display: flex;
-	justify-content: end;
+	justify-content: flex-end;
 }
 
 .modal img:hover {
@@ -377,4 +377,14 @@ footer nav ul {
 	top: 0;
 	right: 0;
 	margin: 5px;
+}
+
+.modal-arrow {
+	display: flex;
+	justify-content: space-between;
+}
+
+.modal-return {
+	height: 21px;
+	width: 21px;
 }

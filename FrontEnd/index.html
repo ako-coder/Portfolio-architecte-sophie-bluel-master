@@ -52,9 +52,10 @@
 			<img href="#modal1" id="modal_edition" class="js-modal" src="assets/icons/edit.png" style="display:none"/>			
 		</div>
 		<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal" style="display:none">
-			<div class="modal-wrapper js-modal-stop">
-				<div class="modal-xmark">
-					<img class="js-modal-close" src="assets/icons/xmark.png"/>
+			<div class="modal-wrapper js-modal-stop">								
+				<div class="modal-xmark">					
+					<img class="modal-return" src="assets/icons/arrow-left.png" style="display: none"/>
+					<img class="js-modal-close" src="assets/icons/xmark.png"/>					
 				</div>
 				<div id="galerie_photo">
 					<h3 id="titlemodal">Galerie photo</h3>
@@ -65,8 +66,14 @@
 						<button id="bouton_ajouter_photo" class="filter_clicked">Ajouter une photo</button>
 					</div>
 				</div>
-				
+
+				<!-- Modale2  -->
+
 				<div id="ajout_photo" style="display: none">
+					<!-- <div class="modal-arrow">
+						<img class="modal-return" src="assets/icons/arrow-left.png"/>
+						<img class="js-modal-close" src="assets/icons/xmark.png"/>
+					</div>															 -->
 					<h3 id="titlemodal">Ajout photo</h3>
 					<!-- TODO: layout -->
 					<div></div>

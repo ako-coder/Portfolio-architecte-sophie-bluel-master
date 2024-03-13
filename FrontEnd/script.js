@@ -1,3 +1,4 @@
+// partie 1: affichage dynamique des travaux
 function integrerWorks(article) {
     const gallery = document.querySelector(".gallery");
     const figure = document.createElement("figure");
@@ -36,6 +37,8 @@ function afficherWorks() {
 };
 
 afficherWorks();
+
+// partie 2: filtres par catégorie
 
 function afficherWorksFiltered(category) {
     for (const photo of works) {
@@ -121,11 +124,6 @@ boutonLogout.addEventListener('click', () => {
     localStorage.removeItem('token');
 })
 
-const boutonEdit = document.getElementById("modal_edition");
-boutonEdit.addEventListener('click', () => {
-
-})
-
 function integrerMiniWorks(article) {
     const miniGallery = document.querySelector(".mini-gallery");
     const miniFig = document.createElement("figure");
@@ -184,19 +182,28 @@ function cleanMiniWorks() {
     gallery.innerHTML = "";
 }
 
+// deuxième modale
 const boutonAjouterPhoto = document.getElementById('bouton_ajouter_photo')
 boutonAjouterPhoto.addEventListener('click', () => {
     const divGalleryPhoto = document.getElementById('galerie_photo')
     divGalleryPhoto.style.display = 'none' 
     const divAjoutPhoto = document.getElementById('ajout_photo')
     divAjoutPhoto.style.display = 'block' 
+    const modalReturn = document.querySelector('.modal-return')
+    modalReturn.style.display = 'flex'
+    const modalXmarkDiv = document.querySelector('.modal-xmark')
+    modalXmarkDiv.style.justifyContent = 'space-between'
 })
 
-//TODO: inverser
-// const boutonAjouterPhoto = document.getElementById('bouton_ajouter_photo')
-// boutonAjouterPhoto.addEventListener('click', () => {
-//     const divGalleryPhoto = document.getElementById('galerie_photo')
-//     divGalleryPhoto.style.display = 'none' 
-//     const divAjoutPhoto = document.getElementById('ajout_photo')
-//     divAjoutPhoto.style.display = 'block' 
-// })
+// inverser
+const boutonReturn = document.querySelector('.modal-return')
+boutonReturn.addEventListener('click', () => {
+    divGalleryPhoto = document.getElementById('galerie_photo')
+    divGalleryPhoto.style.display = 'block' 
+    divAjoutPhoto = document.getElementById('ajout_photo')
+    divAjoutPhoto.style.display = 'none' 
+    modalReturn = document.querySelector('.modal-return')
+    modalReturn.style.display = 'none'
+    modalXmarkDiv = document.querySelector('.modal-xmark')
+    modalXmarkDiv.style.justifyContent = 'flex-end'
+})
