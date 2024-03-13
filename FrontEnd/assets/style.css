@@ -232,7 +232,7 @@ footer nav ul {
 /* page login */
 
 #login {
-	width: 50%;
+	width: 35%;
 	margin: auto;
 }
 #login > * {
@@ -341,8 +341,11 @@ footer nav ul {
 	justify-content: center;	
 } 
 
+#bouton_ajouter_photo {
+	width: 237px;
+}
+
 .modal-wrapper {
-	/* overflow: auto; */
 	width: 565px;
 	height: 630px;
 	background-color: #FFF;
@@ -357,7 +360,6 @@ footer nav ul {
 	margin: 50px 55px 50px 70px;
 	padding-bottom: 35px;
 	border-bottom: solid 1px #B3B3B3;
-
 }
 
 .mini-pic {
@@ -387,4 +389,65 @@ footer nav ul {
 .modal-return {
 	height: 21px;
 	width: 21px;
+}
+
+/* ajout_form */
+
+#ajout-pic {
+	background-color: #E8F1F6;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 420px;
+	height: 169px;
+	margin-bottom: 0px;
+}
+
+#ajout_form {
+	width: 75%;
+	margin: auto;
+}
+#ajout_form > * {
+	text-align: center;
+
+}
+
+#ajout_form form {
+	text-align: left;
+	margin-top:30px;
+	display: flex;
+	flex-direction: column;
+}
+
+#ajout_form input,
+#ajout_form select {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+#ajout_form p {
+	margin-top: 50px;
+	border-bottom: solid 1px #B3B3B3;
+	margin-bottom: 20px;
+}
+
+#ajout_form label {
+	margin: 2em 0 1em 0;
+}
+
+#ajout_form input[type="submit"]{
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 16px;
+	color: white;
+	background-color: #A7A7A7;
+	margin : 2em auto ;
+	width: 237px;
+	height: 40px;
+	text-align: center;
+	border-radius: 60px ;
+	font-size: 16px;
 }

@@ -69,16 +69,25 @@
 
 				<!-- Modale2  -->
 
-				<div id="ajout_photo" style="display: none">
-					<!-- <div class="modal-arrow">
-						<img class="modal-return" src="assets/icons/arrow-left.png"/>
-						<img class="js-modal-close" src="assets/icons/xmark.png"/>
-					</div>															 -->
-					<h3 id="titlemodal">Ajout photo</h3>
-					<!-- TODO: layout -->
-					<div></div>
-					<div></div>
-					<div></div>
+				<div id="ajout_photo" class="body-margin" style="display: none">
+					<h3 id="titlemodal">Ajout photo</h3>					
+					<div id="ajout_form">
+						<div id="ajout-pic">
+							<img/>
+							<button></button>
+							<p></p>
+						</div>
+						<form action="#" method="post">
+							<label for="add-title">Titre</label>
+							<input type="text" name="add-title" id="add-title">
+							<label for="email">Catégorie</label>
+							<select name="add-categorie" id="add-categorie">
+								<option value=""></option>
+							  </select>
+							<p></p>  
+							<input type="submit" value="Valider">
+						</form>
+					</div>
 				</div>
 			</div>
 		</aside>
