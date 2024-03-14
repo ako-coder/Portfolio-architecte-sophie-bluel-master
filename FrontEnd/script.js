@@ -12,18 +12,33 @@ function integrerWorks(article) {
     figure.appendChild(caption);
 };
 
-function getWorks() {
-    fetch('http://localhost:5678/api/works')
-        .then(response => response.json())
-        .then(works => {
-            if (Array.isArray(works)) {
-                localStorage.setItem("works", JSON.stringify(works));
-            } else {
-                console.error('La réponse JSON n\'est pas un tableau.');
-            }
-        })
-        .catch(error => console.error('Erreur lors de la requête fetch :', error));
-};
+// function getWorks() {
+//     fetch('http://localhost:5678/api/works')
+//         .then(response => response.json())
+//         .then(works => {
+//             if (Array.isArray(works)) {
+//                 localStorage.setItem("works", JSON.stringify(works));
+//             } else {
+//                 console.error('La réponse JSON n\'est pas un tableau.');
+//             }
+//         })
+//         .catch(error => console.error('Erreur lors de la requête fetch :', error));
+// };
+
+async function getWorks() {
+    try {
+        const response = await fetch('http://localhost:5678/api/works');
+        const works = await response.json();
+
+        if (Array.isArray(works)) {
+            localStorage.setItem("works", JSON.stringify(works));
+        } else {
+            console.error('La réponse JSON n\'est pas un tableau.');
+        }
+    } catch (error) {
+        console.error('Erreur lors de la requête fetch :', error);
+    }
+}
 
 getWorks();
 
@@ -65,6 +80,7 @@ getCategories();
 
 let categoriesStorageString = localStorage.getItem("categories");
 let categories = JSON.parse(categoriesStorageString);
+console.log(categories)
 
 function integrerBoutons(article) {
     const divButtons = document.querySelector(".buttons");
@@ -207,3 +223,15 @@ boutonReturn.addEventListener('click', () => {
     modalXmarkDiv = document.querySelector('.modal-xmark')
     modalXmarkDiv.style.justifyContent = 'flex-end'
 })
+
+function categoriesAjoutPhoto(cat) {
+    const addCategorie = document.getElementById('add-categorie')
+    const optionCategorie = document.createElement('option')
+    optionCategorie.innerText = cat.name
+
+    addCategorie.appendChild(optionCategorie)
+}
+
+for (i = 0; i < 3; i++) {
+    categoriesAjoutPhoto(categories[i]);    
+}

@@ -17,7 +17,7 @@ function login(username, password) {
                 reponseServeur.then(data => {
                     console.log(data);
                     localStorage.setItem("token", JSON.stringify(data.token));
-                    window.location.href="http://127.0.0.1:5500/FrontEnd/index.html";                
+                    window.location.href="./index.html";                
                 })
             } else {                
                let messageErreur = document.getElementById("error_message");
