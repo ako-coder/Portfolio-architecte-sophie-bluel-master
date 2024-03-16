@@ -80,7 +80,6 @@ getCategories();
 
 let categoriesStorageString = localStorage.getItem("categories");
 let categories = JSON.parse(categoriesStorageString);
-console.log(categories)
 
 function integrerBoutons(article) {
     const divButtons = document.querySelector(".buttons");
@@ -209,6 +208,23 @@ boutonAjouterPhoto.addEventListener('click', () => {
     modalReturn.style.display = 'flex'
     const modalXmarkDiv = document.querySelector('.modal-xmark')
     modalXmarkDiv.style.justifyContent = 'space-between'
+
+    // selection fichier
+    document.getElementById('add-file').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('preview-image').src = e.target.result;
+    
+                // chacher le reste de la div
+                document.getElementById('add-file').style.display = 'none';
+                document.querySelector('label[for="add-file"]').style.display = 'none';
+                document.querySelector('.text-10px').style.display = 'none';
+            };
+            reader.readAsDataURL(file);
+        }
+    });
 })
 
 // inverser
@@ -222,6 +238,13 @@ boutonReturn.addEventListener('click', () => {
     modalReturn.style.display = 'none'
     modalXmarkDiv = document.querySelector('.modal-xmark')
     modalXmarkDiv.style.justifyContent = 'flex-end'
+
+    // Reset ajout-pic à l'état d'avant la selection de fichier
+    const previewImage = document.getElementById('preview-image');
+    previewImage.src = "assets/icons/grey_pic.png";
+    document.getElementById('add-file').style.display = 'block';
+    document.querySelector('label[for="add-file"]').style.display = 'block';
+    document.querySelector('.text-10px').style.display = 'block';
 })
 
 function categoriesAjoutPhoto(cat) {
@@ -235,3 +258,18 @@ function categoriesAjoutPhoto(cat) {
 for (i = 0; i < 3; i++) {
     categoriesAjoutPhoto(categories[i]);    
 }
+
+// const addTitle = document.getElementById('add-title')
+// addTitle.addEventListener('change', () => {
+//     console.log(addTitle.value)
+//     if (addTitle.value !== null || addTitle.value !== "" || addTitle.value.length  !== 0){
+//         let submitButtonM = document.getElementById('submit-button-modale2')
+//         submitButtonM.removeAttribute("disabled")
+//         submitButtonM.style.backgroundColor = '#1D6154'
+//     } else {
+//         console.log("else part")
+//         document.getElementById('submit-button-modale2').addAttribute("disabled")
+//         submitButtonM.style.backgroundColor = '#A7A7A7'
+//     }
+
+// })

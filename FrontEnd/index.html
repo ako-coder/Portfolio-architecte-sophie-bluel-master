@@ -74,21 +74,20 @@
 					<div id="ajout_form">						
 						<form action="#" method="post">
 							<div id="ajout-pic">
-								<img src="assets/icons/grey_pic.png"/>
-								<!-- <button id="add-file">+ Ajouter photo</button> -->
+								<img id="preview-image" src="assets/icons/grey_pic.png"/>
 								<input type="file" id="add-file" name="add-file" accept="image/png, image/jpeg" />
 								<label for="add-file">+ Ajouter photo</label>
 								<p class="text-10px">jpg, png : 4mo max</p>
 							</div>
 							<label class="label-modal2" for="add-title">Titre</label>
-							<input type="text" name="add-title" id="add-title">
+							<input id="add-title" type="text" name="add-title">
 							<!-- Malt & Juniper - New York -->
 							<label class="label-modal2" for="add-categorie">Catégorie</label>
 							<select name="add-categorie" id="add-categorie">
 								<option value=""></option>
 							  </select>
 							<p id="ajout_form_line"></p>  
-							<input type="submit" value="Valider">
+							<input id="submit-button-modale2" type="submit" value="Valider" disabled>
 						</form>
 					</div>
 				</div>

@@ -404,6 +404,11 @@ footer nav ul {
 	margin-bottom: 0px;
 }
 
+#preview-image {
+	max-width: 100%;
+    max-height: 100%;
+}
+
 #ajout-pic input {
 	width: 0.1px;
 	height: 0.1px;
