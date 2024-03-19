@@ -1,4 +1,4 @@
-// import { closeModal } from "./app.js";
+import { closeModal } from "./app.js";
 
 // partie 1: affichage dynamique des travaux
 function integrerWorks(article) {
@@ -224,13 +224,13 @@ boutonAjouterPhoto.addEventListener('click', () => {
 // inverser
 const boutonReturn = document.querySelector('.modal-return');
 boutonReturn.addEventListener('click', () => {
-    divGalleryPhoto = document.getElementById('galerie_photo');
+    const divGalleryPhoto = document.getElementById('galerie_photo');
     divGalleryPhoto.style.display = 'block';
-    divAjoutPhoto = document.getElementById('ajout_photo');
+    const divAjoutPhoto = document.getElementById('ajout_photo');
     divAjoutPhoto.style.display = 'none';
-    modalReturn = document.querySelector('.modal-return');
+    const modalReturn = document.querySelector('.modal-return');
     modalReturn.style.display = 'none';
-    modalXmarkDiv = document.querySelector('.modal-xmark');
+    const modalXmarkDiv = document.querySelector('.modal-xmark');
     modalXmarkDiv.style.justifyContent = 'flex-end';
 });
 
@@ -299,9 +299,7 @@ form.addEventListener('submit', async function(event) {
             works.push(data);
             console.log(works);
             localStorage.setItem("works", JSON.stringify(works));
-            // document.getElementById('modal1').style.display = 'none';
-            // closeModal();
-            
+            closeModal(event);        
 
         } else {
             console.error('Échec de l\'envoi des données.');
