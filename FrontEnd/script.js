@@ -276,11 +276,7 @@ form.addEventListener('submit', async function(event) {
     formData.append("title", document.getElementById('add-title').value)
     formData.append("image", document.getElementById('add-file').files[0])
     formData.append("category", document.getElementById('add-categorie').value)
-    console.log(formData);
-    console.log(`${document.getElementById('add-title').value}`)
-    console.log(`${document.getElementById('add-file').files[0]}`)
-    console.log(`${document.getElementById('add-categorie').value}`)
-
+    
     try {
         const response = await fetch('http://localhost:5678/api/works/', {
             method: 'POST',

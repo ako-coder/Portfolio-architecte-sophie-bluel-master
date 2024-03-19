@@ -12,7 +12,7 @@
 </head>
 <body>	
 	<div class="mode-edition" id="m_edition" style="display:none">
-		<img src="assets/icons/mode_edition.png"/>
+		<img src="assets/icons/mode_edition.png" alt="Bande noire mode edition">
 	</div>
 	<div class="body-margin">	
 <header>	
@@ -49,13 +49,13 @@
 
 		<div id="projets_modal1">
 			<h2 id="projets">Mes Projets</h2>			
-			<img href="#modal1" id="modal_edition" class="js-modal" src="assets/icons/edit.png" style="display:none"/>			
+			<img href="#modal1" id="modal_edition" class="js-modal" src="assets/icons/edit.png" style="display:none" alt="Bouton edition">			
 		</div>
 		<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal" style="display:none">
 			<div class="modal-wrapper js-modal-stop">								
 				<div class="modal-xmark">					
-					<img class="modal-return" src="assets/icons/arrow-left.png" style="display: none" />
-					<img class="js-modal-close" src="assets/icons/xmark.png"/>					
+					<img class="modal-return" src="assets/icons/arrow-left.png" style="display: none" alt="Bouton retour">
+					<img class="js-modal-close" src="assets/icons/xmark.png" alt="Bouton croix">					
 				</div>
 				<div id="galerie_photo">
 					<h3 id="titlemodal">Galerie photo</h3>
@@ -70,20 +70,20 @@
 				<!-- Modale2  -->
 
 				<div id="ajout_photo" class="body-margin" style="display: none">
-					<h3 id="titlemodal">Ajout photo</h3>
+					<h3 id="titlemodal2">Ajout photo</h3>
 
 					<div id="ajout_form">						
 						
 						<form id="form-new-work" action="#" method="post" autocomplete="off">
 
 							<div id="ajout-pic">
-								<img id="preview-image" src="assets/icons/grey_pic.png"/>
+								<img id="preview-image" src="assets/icons/grey_pic.png" alt="Image de preview grise">
 
 								<input 
 									id="add-file" 
 									type="file"									
 									name="add-file" 
-									accept="image/png, image/jpeg" />
+									accept="image/png, image/jpeg">
 								<label for="add-file">+ Ajouter photo</label>
 
 								<p class="text-10px">jpg, png : 4mo max</p>
@@ -101,7 +101,7 @@
 							<select 
 								id="add-categorie"
 								name="add-categorie">
-								<option value=""></option>
+								<option label="option"></option>
 							</select>
 
 							<p id="ajout_form_line"></p>  							
