@@ -54,7 +54,7 @@
 		<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal" style="display:none">
 			<div class="modal-wrapper js-modal-stop">								
 				<div class="modal-xmark">					
-					<img class="modal-return" src="assets/icons/arrow-left.png" style="display: none"/>
+					<img class="modal-return" src="assets/icons/arrow-left.png" style="display: none" />
 					<img class="js-modal-close" src="assets/icons/xmark.png"/>					
 				</div>
 				<div id="galerie_photo">
@@ -70,26 +70,51 @@
 				<!-- Modale2  -->
 
 				<div id="ajout_photo" class="body-margin" style="display: none">
-					<h3 id="titlemodal">Ajout photo</h3>					
+					<h3 id="titlemodal">Ajout photo</h3>
+
 					<div id="ajout_form">						
-						<form action="#" method="post">
+						
+						<form id="form-new-work" action="#" method="post" autocomplete="off">
+
 							<div id="ajout-pic">
 								<img id="preview-image" src="assets/icons/grey_pic.png"/>
-								<input type="file" id="add-file" name="add-file" accept="image/png, image/jpeg" />
+
+								<input 
+									id="add-file" 
+									type="file"									
+									name="add-file" 
+									accept="image/png, image/jpeg" />
 								<label for="add-file">+ Ajouter photo</label>
+
 								<p class="text-10px">jpg, png : 4mo max</p>
 							</div>
+							
 							<label class="label-modal2" for="add-title">Titre</label>
-							<input id="add-title" type="text" name="add-title">
 							<!-- Malt & Juniper - New York -->
+							<input 
+								id="add-title" 
+								type="text" 
+								name="add-title">
+
 							<label class="label-modal2" for="add-categorie">Catégorie</label>
-							<select name="add-categorie" id="add-categorie">
+							
+							<select 
+								id="add-categorie"
+								name="add-categorie">
 								<option value=""></option>
-							  </select>
-							<p id="ajout_form_line"></p>  
-							<input id="submit-button-modale2" type="submit" value="Valider" disabled>
+							</select>
+
+							<p id="ajout_form_line"></p>  							
+							
+							<input id="submit-button-modale2" 
+								type="submit" 
+								value="Valider" 
+								style="cursor: not-allowed" 
+								disabled>						
 						</form>
+					
 					</div>
+
 				</div>
 			</div>
 		</aside>
@@ -126,6 +151,8 @@
 </footer>
 <script src="script.js"></script>
 <script src="app.js"></script>
+<!-- <script type="module" src="script.js"></script>
+<script type="module" src="app.js"></script> -->
 </div>
 </body>
 </html>
