@@ -13,7 +13,8 @@ const openModal = function (e) {
     modal.querySelector('.js-modal-stop').addEventListener('click', stopPropagation);
 }
 
-export const closeModal = function (e) {
+// export 
+const closeModal = function (e) {
     if (modal === null) return
     e.preventDefault();
     modal.style.display = "none";

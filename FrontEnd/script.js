@@ -1,4 +1,4 @@
-import { closeModal } from "./app.js";
+// import { closeModal } from "./app.js";
 
 // partie 1: affichage dynamique des travaux
 function integrerWorks(article) {
@@ -295,7 +295,7 @@ form.addEventListener('submit', async function(event) {
             works.push(data);
             console.log(works);
             localStorage.setItem("works", JSON.stringify(works));
-            closeModal(event);        
+            // closeModal(event);        
 
         } else {
             console.error('Échec de l\'envoi des données.');
